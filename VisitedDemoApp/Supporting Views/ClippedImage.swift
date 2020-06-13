@@ -9,18 +9,19 @@
 import SwiftUI
 
 struct ClippedImage: View {
+    var image: Image
+    
     var body: some View {
-        Image("komodo")
+        image
             .resizable()
-            .scaledToFit()
-            .clipShape(Circle())
-            .overlay(Circle().stroke(Color.white, lineWidth: 4))
-            .shadow(radius:10)
+            .aspectRatio(contentMode: .fill)
+            .frame(height:250)
+            .clipped()
     }
 }
 
 struct ClippedImage_Previews: PreviewProvider {
     static var previews: some View {
-        ClippedImage()
+        ClippedImage(image: placesData[1].image)
     }
 }
