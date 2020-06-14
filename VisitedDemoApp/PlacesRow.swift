@@ -16,11 +16,10 @@ struct PlacesRow: View {
             places.image
                 .resizable()
                 .frame(width: 50, height: 50)
-            
             Text(places.name)
             Spacer()
-            if places.isVisited == true {
-                Image(systemName: "checkmark.seal.fill")
+            if places.isVisited {
+                Image(systemName: "checkmark.circle.fill")
                     .imageScale(.medium)
                     .foregroundColor(.green)
                 
