@@ -12,26 +12,43 @@ struct PlacesList: View {
     @EnvironmentObject var userData: UserData
     
     var body: some View {
-        NavigationView {
-            List {
-                Toggle(isOn: $userData.showVisitedOnly) {
-                    Text("Visited Only")
+        TabView {
+            NavigationView {
+                   List {
+                       ForEach(userData.places) {
+                            places in NavigationLink (destination: PlacesDetail(places: places)) { PlacesImageRow(places: places)
+                        }
+                       }
+                        .navigationBarTitle( "Visited", displayMode: .inline)
+                   }
                 }
-                ForEach (userData.places) { places in
-                    if !self.userData.showVisitedOnly || places.isVisited {
-                    NavigationLink (destination: PlacesDetail(places: places)) {
-                        PlacesRow(places: places)
+                .tabItem {
+                    Image(systemName: "house.fill")
+                }
+            NavigationView {
+                List {
+                    Toggle(isOn: $userData.showVisitedOnly) {
+                        Text("Show Visited Only")
+                    }
+                    ForEach (userData.places) { places in
+                        if !self.userData.showVisitedOnly || places.isVisited {
+                        NavigationLink (destination: PlacesDetail(places: places)) {
+                            PlacesRow(places: places)
+                            }
                         }
                     }
+                     .navigationBarTitle("Places", displayMode: .inline)
                 }
-                .navigationBarTitle(Text("Places"))
             }
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                }
         }
     }
 }
 
 struct PlacesList_Previews: PreviewProvider {
     static var previews: some View {
-        PlacesList()
+        PlacesList().environmentObject(UserData())
     }
 }
