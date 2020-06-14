@@ -34,6 +34,7 @@
 		A68BE6842493BCD500C792FE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BE6832493BCD500C792FE /* Data.swift */; };
 		A68BE6862494AFC800C792FE /* PlacesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BE6852494AFC800C792FE /* PlacesRow.swift */; };
 		A68BE6882494B24300C792FE /* PlacesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BE6872494B24300C792FE /* PlacesList.swift */; };
+		A68BE68A2495F99F00C792FE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BE6892495F99F00C792FE /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		A68BE6832493BCD500C792FE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A68BE6852494AFC800C792FE /* PlacesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRow.swift; sourceTree = "<group>"; };
 		A68BE6872494B24300C792FE /* PlacesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesList.swift; sourceTree = "<group>"; };
+		A68BE6892495F99F00C792FE /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				A68BE6812493BBEE00C792FE /* Places.swift */,
+				A68BE6892495F99F00C792FE /* UserData.swift */,
 				A68BE6832493BCD500C792FE /* Data.swift */,
 			);
 			path = Models;
@@ -369,6 +372,7 @@
 				A68BE6622493546900C792FE /* MapView.swift in Sources */,
 				A68BE6312493363A00C792FE /* SceneDelegate.swift in Sources */,
 				A68BE6332493363A00C792FE /* PlacesDetail.swift in Sources */,
+				A68BE68A2495F99F00C792FE /* UserData.swift in Sources */,
 				A68BE6822493BBEE00C792FE /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

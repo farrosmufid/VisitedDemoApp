@@ -18,6 +18,8 @@ struct Places: Hashable, Codable, Identifiable {
     var state: String
     var park: String
     var category: Category
+    var isVisited: Bool
+    var isFeatured: Bool
 
     var locationCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(

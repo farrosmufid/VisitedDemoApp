@@ -19,6 +19,12 @@ struct PlacesRow: View {
             
             Text(places.name)
             Spacer()
+            if places.isVisited == true {
+                Image(systemName: "checkmark.seal.fill")
+                    .imageScale(.medium)
+                    .foregroundColor(.green)
+                
+            }
         }
     }
 }

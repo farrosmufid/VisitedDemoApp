@@ -9,14 +9,23 @@
 import SwiftUI
 
 struct PlacesList: View {
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
         NavigationView {
-            List (placesData) { places in
-                NavigationLink (destination: PlacesDetail(places: places)) {
-                    PlacesRow(places: places)
+            List {
+                Toggle(isOn: $userData.showVisitedOnly) {
+                    Text("Visited Only")
                 }
+                ForEach (userData.places) { places in
+                    if !self.userData.showVisitedOnly || places.isVisited {
+                    NavigationLink (destination: PlacesDetail(places: places)) {
+                        PlacesRow(places: places)
+                        }
+                    }
+                }
+                .navigationBarTitle(Text("Places"))
             }
-            .navigationBarTitle(Text("Places"))
         }
     }
 }
