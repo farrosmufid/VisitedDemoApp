@@ -23,13 +23,26 @@ class VisitedDemoAppUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testChangingHomeVisitedAlsoChangedListViewVisited() throws {
         // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication()
+        app.launch()
+        let firstTableIndex = app.tables.cells.buttons["Turtle Rock\nTwentynine Palms\nCalifornia\nFeatured\nYou have visited this place"]
+        firstTableIndex.tap()
+        let bookmark = app.buttons["bookmarkFill"]
+        bookmark.tap()
+        let backHome = app.navigationBars["Turtle Rock"].buttons["Visited"]
+        backHome.tap()
+        let moveTab = app.tabBars.children(matching: .button).element(boundBy: 1)
+        moveTab.tap()
+        let firstListView = app.tables/*@START_MENU_TOKEN@*/.cells.buttons["Turtle Rock"]/*[[".cells.buttons[\"Turtle Rock\"]",".buttons[\"Turtle Rock\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/
+        firstListView.tap()
+        let bookmarkTappedTwice = app.buttons["bookmark"]
+        bookmarkTappedTwice.tap()
+        let backListView = app.navigationBars["Turtle Rock"].buttons["Places"]
+        backListView.tap()
     }
 
     func testLaunchPerformance() throws {

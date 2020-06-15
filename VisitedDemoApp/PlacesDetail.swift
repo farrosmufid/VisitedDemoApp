@@ -36,10 +36,13 @@ struct PlacesDetail: View {
                             Image(systemName: "bookmark.fill")
                                 .imageScale(.medium)
                                 .foregroundColor(.red)
+                                .accessibility(identifier: "bookmarkFill")
+
                         } else {
                              Image(systemName: "bookmark")
                                 .imageScale(.medium)
                                 .foregroundColor(.red)
+                                .accessibility(identifier: "bookmark")
                         }
                     }
                      
