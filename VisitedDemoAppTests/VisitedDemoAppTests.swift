@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import CoreLocation
+
 @testable import VisitedDemoApp
 
 class VisitedDemoAppTests: XCTestCase {
@@ -19,9 +21,18 @@ class VisitedDemoAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testFirstPlacesDataIndexIsValid() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertEqual(placesData[0].name, "Turtle Rock", "Place name was not Turtle Rock.")
+        XCTAssertEqual(placesData[0].category.rawValue, "Featured", "Placencategory was not Featured.")
+        XCTAssertEqual(placesData[0].city, "Twentynine Palms", "Place data city was not Twentynine Palms.")
+        XCTAssertEqual(placesData[0].state, "California", "Place data state was not California.")
+        XCTAssertEqual(placesData[0].id, 1001, "Place data id was not 1001.")
+        XCTAssertEqual(placesData[0].isFeatured, true, "Place data isFeatured was false.")
+        XCTAssertEqual(placesData[0].isVisited, true, "Place data isVisited was false.")
+        XCTAssertEqual(placesData[0].park, "Joshua Tree National Park", "Place data park was not Joshua Tree National Park.")
+        XCTAssertEqual(placesData[0].image, ImageStore.shared.image(name: "turtlerock"), "Place data image was not Turtle Rock.")
     }
 
     func testPerformanceExample() throws {
